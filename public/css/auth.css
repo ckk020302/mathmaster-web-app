@@ -1,0 +1,59 @@
+/* Split layout */
+html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+.auth-split { display: grid; grid-template-columns: 1fr 1fr; height: 100%; }
+.auth-left { display:flex; flex-direction:column; padding: 24px; }
+.auth-right { background-size: cover; background-position: center; border-left: 2px solid #ddd; }
+
+.brand { font-weight: 700; margin-bottom: 40px; display:inline-flex; align-items:center; gap:8px; }
+.brand img { height: 22px; width: auto; display:inline-block; }
+.auth-panel { max-width: 380px; margin: auto 0; }
+.auth-panel .form { width: 100%; max-width: 380px; }
+.welcome-wrap { max-width: 520px; margin: auto 0; padding: 8vh 0; }
+.welcome-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  white-space: nowrap; /* Add this line */
+}.hero-actions { display:flex; gap: 12px; align-items:center; }
+.panel-head { display:flex; align-items:baseline; gap: 12px; }
+.panel-head h1 { margin: 0 0 20px 0; }
+.muted { color: #666; }
+.small { font-size: 0.9rem; }
+.mt { margin-top: 16px; }
+
+.btn-stack { display:flex; flex-direction:column; gap: 12px; margin-top: 18px; }
+.btn-outline { display:block; text-align:center; padding: 10px 12px; border:1px solid #999; border-radius: 4px; color:#222; text-decoration:none; }
+.btn-outline:hover { background:#f4f4f4; }
+
+.form { display:flex; flex-direction:column; gap: 14px; width:100%; }
+.field { width:100%; }
+.field input { width: 100%; box-sizing: border-box; display:block; padding: 10px 12px; border: 1px solid #999; border-radius: 4px; font-size: 14px; }
+.field .role-toggle { display:inline-flex; align-items:center; border:1px solid #d0d0d0; border-radius: 8px; overflow:hidden; background:#fff; }
+.field .role-toggle input { position:absolute; opacity:0; pointer-events:none; }
+.field .role-toggle label { padding:8px 14px; cursor:pointer; user-select:none; color:#444; background:#fff; }
+.field .role-toggle label + input + label { border-left:1px solid #e6e6e6; }
+.field .role-toggle input:checked + label { background:#4cd964; color:#fff; }
+.password { position: relative; }
+.password input { padding-right: 36px; } /* room for eye icon */
+.password .peek { position:absolute; right:6px; top:50%; transform: translateY(-50%); background:transparent; border:none; cursor:pointer; padding:4px; color:#444; }
+.password .peek:hover { color:#000; }
+
+/* Utility for hiding the alternate icon */
+.d-none { display: none; }
+
+/* Hide native Edge/IE password reveal/clear so it doesn't overlap our icon */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear { display: none; }
+input[type="text"]::-ms-clear,
+input[type="email"]::-ms-clear { display: none; }
+
+.btn-primary { background:#4cd964; color:#fff; border:none; padding: 10px 16px; border-radius: 22px; cursor: pointer; width: 120px; }
+.btn-primary:hover { filter: brightness(0.95); }
+.btn-lg { padding: 12px 22px; border-radius: 28px; min-width: 150px; font-size: 1rem; }
+
+.alert { border:1px solid #e0b4b4; background:#fff6f6; color:#912d2b; padding:10px 12px; border-radius:4px; margin-bottom:6px; }
+
+@media (max-width: 900px) {
+  .auth-split { grid-template-columns: 1fr; }
+  .auth-right { display:none; }
+}

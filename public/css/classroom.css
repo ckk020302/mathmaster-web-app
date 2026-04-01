@@ -1,0 +1,297 @@
+/* public/css/classroom.css */
+
+body {
+    background-color: #f8f9fa;
+        padding-top: 56px; /* Adjust this value if your navbar height is different */
+
+}
+
+.classroom-header {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 2rem;
+}
+
+.card.classroom-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card.classroom-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-header.classroom-banner {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: white;
+    padding: 1.5rem;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-header.classroom-banner .card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.card-header.classroom-banner .card-teacher {
+    font-size: 0.9rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 1.25rem;
+}
+
+/* Add some color variety to the banners */
+.col-md-4:nth-child(3n+1) .classroom-card .classroom-banner {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/EXQq82JWkAAYtes.jpg');
+}
+
+.col-md-4:nth-child(3n+2) .classroom-card .classroom-banner {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/1669652490608.jpeg');
+}
+
+.col-md-4:nth-child(3n) .classroom-card .classroom-banner {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/original-83bd0a68be7542cc11c8b6a994c791d6.webp');
+}
+
+/* Layout & Sidebar Styles */
+.layout-wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 56px); /* Adjust based on your actual navbar height */
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Make the sidebar fixed */
+    top: 56px; /* Position it below the navbar. Adjust if your navbar height is different. */
+    left: 0; /* Align to the left */
+    z-index: 1020; /* Ensure it's above other content but below any modals or tooltips */
+}
+
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: .9rem 1.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sidebar-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.sidebar .nav-link.active svg, .sidebar .nav-link:hover svg {
+    color: #0d6efd;
+}
+
+.sidebar .logout-wrapper {
+    margin-top: auto;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    transition: margin-left 0.3s ease, padding 0.3s ease;
+    margin-left: 250px; /* Add a margin to the main content equal to the sidebar width */
+}
+
+/* Collapsed (icon-only) state */
+body.sidebar-collapsed .sidebar {
+    width: 64px; /* show icons, hide labels */
+}
+body.sidebar-collapsed .sidebar .nav-link {
+    justify-content: center;
+    padding: .9rem 0; /* tighter padding */
+}
+body.sidebar-collapsed .sidebar .nav-link span {
+    display: none; /* hide labels */
+}
+body.sidebar-collapsed .sidebar .logout-wrapper span {
+    display: none;
+}
+body.sidebar-collapsed .sidebar .sidebar-icon {
+    margin-right: 0; /* center icons when collapsed */
+}
+
+body.sidebar-collapsed .main-content {
+    margin-left: 64px; /* Adjust to collapsed sidebar width */
+}
+
+.btn-info {
+    background-color: #0dcaf0 !important;
+    border-color: #0dcaf0 !important;
+}
+
+/* Notification Dropdown */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.achievement-badge {
+    height: 64px;
+    width: auto;
+}
+
+/* New Classroom Content Styles */
+.input-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.input-container input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+}
+
+.recent-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.recent-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4285f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.user-info h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.user-info p {
+    font-size: 14px;
+    color: #888;
+}
+
+.question-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.options {
+    list-style-type: none;
+}
+
+.options li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Input Field Icons */
+.input-profile-icon,
+.input-action-icon {
+    height: 1em; /* Adjust to fit input field height */
+    width: auto;
+    cursor: pointer;
+}
+/* ---- Avatar system ---- */
+.avatar        { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; background:#f2f2f2; }
+.avatar-sm     { width: 30px; height: 30px; }
+.avatar-md     { width: 36px; height: 36px; }
+.avatar-lg     { width: 40px; height: 40px; }
+.avatar-xl     { width: 56px; height: 56px; }
+
+/* Optional: keep list items aligned nicely */
+.list-group-item .avatar { flex: 0 0 auto; }
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 1050; /* above content */
+}
+
+/* Pending invitation card */
+.pending-card {
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.btn-accept-soft {
+    background-color: #c9f7d5;
+    color: #0f5132;
+    border-color: #b7eac6;
+}
+.btn-accept-soft:hover { background-color: #b4efc6; color:#0b3f27; }
+
+.btn-decline-soft {
+    background-color: #f8c8c8;
+    color: #842029;
+    border-color: #f3b3b3;
+}
+.btn-decline-soft:hover { background-color: #f4b3b3; color:#6a1a21; }
